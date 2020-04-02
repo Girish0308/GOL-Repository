@@ -4,13 +4,6 @@ pipeline{
         maven 'maven'
     }
     agent none
-    stages{
-        stage("Checkout"){
-            agent any
-            steps{
-                git 'https://github.com/Girish0308/GOL-Repository.git'
-            }
-        }
         stage("Compile"){
             agent any
             steps{
