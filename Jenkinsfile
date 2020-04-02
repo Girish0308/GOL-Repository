@@ -2,7 +2,7 @@ pipeline{
     tools{
         jdk 'java1.8'
         maven 'maven'
-    }
+        }
     agent none
         stage("Compile"){
             agent any
@@ -33,6 +33,4 @@ pipeline{
                 sh 'mvn package'
             }
         }
-    }
-    
 }
