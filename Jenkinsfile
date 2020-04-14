@@ -24,7 +24,9 @@ pipeline{
             }
         }
         stage("Package-Job"){
-            agent any
+            agent {
+                label 'linux-slave'
+            }
             steps{
                 git 'https://github.com/Girish0308/GOL-Repository.git'
                 sh 'mvn package'
