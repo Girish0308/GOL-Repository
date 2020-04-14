@@ -5,13 +5,13 @@ pipeline{
     }
     agent none
     stages{
-        stage("Compile-Job"){
+        stage("Compile-Job Master"){
             agent any
             steps{
                 sh 'mvn compile'
             }
         }
-        stage("Test-Job"){
+        stage("Test-Job Master"){
             agent any
             steps{
                 git 'https://github.com/Girish0308/GOL-Repository.git'
@@ -23,7 +23,7 @@ pipeline{
                 }
             }
         }
-        stage("Package-Job"){
+        stage("Package-Job Linux Slave"){
             agent {
                 label 'linux-slave'
             }
