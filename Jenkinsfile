@@ -1,7 +1,7 @@
 pipeline{
     tools{
         jdk 'java1.8'
-        maven 'maven'
+        maven 'maven3.6.3'
     }
     agent none
     stages{
@@ -12,9 +12,7 @@ pipeline{
             }
         }
         stage("Test"){
-            agent {
-                label 'Linux-Slave2'
-            }
+            agent any
             steps{
                 git 'https://github.com/Girish0308/GOL-Repository.git'
                 sh 'mvn test'
@@ -26,9 +24,7 @@ pipeline{
             }
         }
         stage("Package"){
-            agent {
-                label 'Linux-Slave'
-            }
+            agent any
             steps{
                 git 'https://github.com/Girish0308/GOL-Repository.git'
                 sh 'mvn package'
