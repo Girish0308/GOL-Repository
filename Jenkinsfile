@@ -5,13 +5,13 @@ pipeline{
     }
     agent none
     stages{
-        stage("Compile"){
+        stage("Compile-Job"){
             agent any
             steps{
                 sh 'mvn compile'
             }
         }
-        stage("Test"){
+        stage("Test-Job"){
             agent any
             steps{
                 git 'https://github.com/Girish0308/GOL-Repository.git'
@@ -23,7 +23,7 @@ pipeline{
                 }
             }
         }
-        stage("Package"){
+        stage("Package-Job"){
             agent any
             steps{
                 git 'https://github.com/Girish0308/GOL-Repository.git'
