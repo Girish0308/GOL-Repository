@@ -37,6 +37,7 @@ pipeline{
                 label 'linux-slave'
             }
             steps{
+                git 'https://github.com/Girish0308/GOL-Repository.git'
                 sh 'deploy.sh'
                 sh 'dockerfile.sh'
             }
