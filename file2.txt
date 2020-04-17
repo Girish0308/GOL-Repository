@@ -2,3 +2,4 @@ this is the second version!
 testing for webhook functionality!!!
 testing for email functionality!!!
 testing for webhook functionality on linux Slave!!!
+testing for docker registry image pull!!!
