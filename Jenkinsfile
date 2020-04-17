@@ -39,7 +39,6 @@ pipeline{
             steps{
                 git 'https://github.com/Girish0308/GOL-Repository.git'
                 sh 'sh deploy.sh'
-                sh 'sh dockerfile.sh'
             }
         }
     }
