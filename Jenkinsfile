@@ -32,6 +32,15 @@ pipeline{
                 sh 'mvn package'
             }
         }
+        stage("Deploy Linux Slave"){
+            agent {
+                label 'linux-slave'
+            }
+            steps{
+                sh 'deploy.sh'
+                sh 'dockerfile.sh'
+            }
+        }
     }
     
 }
